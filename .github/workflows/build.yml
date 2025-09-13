@@ -354,18 +354,7 @@ jobs:
         with:
           egress-policy: block
           allowed-endpoints: |
-            api.github.com:443
-            github.com:443
-            artifacts.githubusercontent.com:443
-            codeload.github.com:443
-            raw.githubusercontent.com:443
-            uploads.github.com:443
-            objects.githubusercontent.com:443
-            pipelines.actions.githubusercontent.com:443
-            archive.ubuntu.com:443
-            security.ubuntu.com:443
-            azure.archive.ubuntu.com:443
-            astral.sh:443
+            ${{ vars.COMMON_ALLOWED_ENDPOINTS }}
             ${{ secrets.CLOUDFLARE_R2_ALLOWED_HOST }}:443
 
       - name: Checkout repository
@@ -415,18 +404,7 @@ jobs:
         with:
           egress-policy: block
           allowed-endpoints: |
-            api.github.com:443
-            github.com:443
-            artifacts.githubusercontent.com:443
-            codeload.github.com:443
-            raw.githubusercontent.com:443
-            uploads.github.com:443
-            objects.githubusercontent.com:443
-            pipelines.actions.githubusercontent.com:443
-            archive.ubuntu.com:443
-            security.ubuntu.com:443
-            azure.archive.ubuntu.com:443
-            astral.sh:443
+            ${{ vars.COMMON_ALLOWED_ENDPOINTS }}
             ${{ secrets.CLOUDFLARE_R2_ALLOWED_HOST }}:443
 
       - name: Checkout repository
@@ -476,21 +454,10 @@ jobs:
         with:
           egress-policy: block
           allowed-endpoints: |
-            api.github.com:443
-            github.com:443
-            artifacts.githubusercontent.com:443
-            codeload.github.com:443
-            raw.githubusercontent.com:443
-            uploads.github.com:443
-            objects.githubusercontent.com:443
-            pipelines.actions.githubusercontent.com:443
+            ${{ vars.COMMON_ALLOWED_ENDPOINTS }}
             pypi.org:443
             files.pythonhosted.org:443
             upload.pypi.org:443
-            astral.sh:443
-            archive.ubuntu.com:443
-            security.ubuntu.com:443
-            azure.archive.ubuntu.com:443
             ${{ secrets.CLOUDFLARE_R2_ALLOWED_HOST }}:443
 
       - name: Checkout repository
@@ -560,17 +527,7 @@ jobs:
         with:
           egress-policy: block
           allowed-endpoints: |
-            api.github.com:443
-            github.com:443
-            codeload.github.com:443
-            raw.githubusercontent.com:443
-            uploads.github.com:443
-            objects.githubusercontent.com:443
-            pipelines.actions.githubusercontent.com:443
-            archive.ubuntu.com:443
-            security.ubuntu.com:443
-            azure.archive.ubuntu.com:443
-            astral.sh:443
+            ${{ vars.COMMON_ALLOWED_ENDPOINTS }}
 
       - name: Checkout repository
         # https://github.com/actions/checkout
@@ -628,20 +585,10 @@ jobs:
         with:
           egress-policy: block
           allowed-endpoints: |
-            api.github.com:443
-            github.com:443
-            codeload.github.com:443
-            raw.githubusercontent.com:443
-            uploads.github.com:443
-            objects.githubusercontent.com:443
-            pipelines.actions.githubusercontent.com:443
-            astral.sh:443
+            ${{ vars.COMMON_ALLOWED_ENDPOINTS }}
             pypi.org:443
             files.pythonhosted.org:443
             upload.pypi.org:443
-            archive.ubuntu.com:443
-            security.ubuntu.com:443
-            azure.archive.ubuntu.com:443
 
       - name: Checkout repository
         # https://github.com/actions/checkout

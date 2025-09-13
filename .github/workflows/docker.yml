@@ -21,14 +21,7 @@ jobs:
         with:
           egress-policy: block
           allowed-endpoints: |
-            # GitHub
-            api.github.com:443
-            github.com:443
-            codeload.github.com:443
-            raw.githubusercontent.com:443
-            uploads.github.com:443
-            objects.githubusercontent.com:443
-            pipelines.actions.githubusercontent.com:443
+            ${{ vars.COMMON_ALLOWED_ENDPOINTS }}
             # Docker Hub (pull base images)
             registry-1.docker.io:443
             auth.docker.io:443
@@ -41,8 +34,6 @@ jobs:
             # Rust toolchain install
             sh.rustup.rs:443
             static.rust-lang.org:443
-            # UV installer
-            astral.sh:443
             # PyPI for Python packages during image build
             pypi.org:443
             files.pythonhosted.org:443

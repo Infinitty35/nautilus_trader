@@ -236,14 +236,7 @@ jobs:
         with:
           egress-policy: block
           allowed-endpoints: |
-            api.github.com:443
-            github.com:443
-            artifacts.githubusercontent.com:443
-            codeload.github.com:443
-            raw.githubusercontent.com:443
-            uploads.github.com:443
-            objects.githubusercontent.com:443
-            pipelines.actions.githubusercontent.com:443
+            ${{ vars.COMMON_ALLOWED_ENDPOINTS }}
             ${{ secrets.CLOUDFLARE_R2_ALLOWED_HOST }}:443
 
       - name: Checkout repository
